@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,7 +37,7 @@ namespace Lab5
         /* This event will run on form load, and it sets the PROGRAMMER constant
          * to display in the form title, hides the choose, stats, and text groupboxes,
          * and generates a random number that the user will use in the following event. */
-        const string PROGAMER = "Jonah Martin";
+        const string PROGRAMMER = "Jonah Martin";
         private void Form1_Load(object sender, EventArgs e)
         {
              this.Text += " " + PROGRAMMER;
@@ -65,7 +65,7 @@ namespace Lab5
             if (Convert.ToInt32(lblCode.Text) != Convert.ToInt32(txtCode.Text))
             {
 
-                if (attemptCount == 1)
+                if (attemptCount == 3)
                 {
                     MessageBox.Show("3 attempts to login\nAccount locked - closing program", PROGRAMMER);
                     this.Close();
@@ -228,7 +228,7 @@ namespace Lab5
         {
             lstNumbers.Items.Clear();
             const int MAX = 5000;
-            const int MIN = 1000
+            const int MIN = 1000;
 
             // generates random number 
             Random rand = new Random(733);
@@ -272,6 +272,7 @@ namespace Lab5
         private int CountOdd()
         {
             int oddNumbers = 0;
+            int i = 0;
             do
             {
                 if (Convert.ToInt32(lstNumbers.Items[i]) % 2 == 1)
